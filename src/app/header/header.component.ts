@@ -7,15 +7,18 @@ import { Todo } from '../todo';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  todo: Todo={
-    task:""
-  };
+  todolist:Todo[]=[];
+  todo:Todo;
   addTodo:boolean=false;
   constructor() { }
 
   ngOnInit() {
   }
-  add() {
-   this.addTodo = true;
+  add(input:string) {
+    console.log(input);
+    this.todo = new Todo(input);
+   this.todolist.push(this.todo);
+   console.log(this.todolist);
+   
   }
 }
