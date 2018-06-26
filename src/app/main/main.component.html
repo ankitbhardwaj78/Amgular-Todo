@@ -1,7 +1,10 @@
 <ul>
 
-<li *ngFor ="let todo of todolist">
-    {{todo.task}}
-</li>
+    <li *ngFor="let todo of todolist">
+        <input *ngIf="todo.done" type="checkbox" checked (click)="todo.done=!todo.done">
+        <input *ngIf="!todo.done" type="checkbox" (click)="todo.done=!todo.done"> {{todo.task}}
+        <button >up</button>
+        <button>down</button>
+    </li>
 
 </ul>
