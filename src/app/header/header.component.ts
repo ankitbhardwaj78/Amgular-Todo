@@ -15,9 +15,6 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {
   }
   add(input: string) {
-    console.log(this);
-
-    console.log(input);
     this.todo = new Todo(input);
     this.todolist.push(this.todo);
     console.log(this.todolist);

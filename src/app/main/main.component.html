@@ -1,10 +1,10 @@
-<ul>
+<ul >
 
-    <li *ngFor="let todo of todolist">
+    <li *ngFor="let todo of todolist;let i=index">
         <input *ngIf="todo.done" type="checkbox" checked (click)="todo.done=!todo.done">
         <input *ngIf="!todo.done" type="checkbox" (click)="todo.done=!todo.done"> {{todo.task}}
-        <button >up</button>
-        <button>down</button>
+        <button id="{{i}}" (click)="moveUp(i)">up</button>
+        <button id="{{i}}" (click)="moveDown(i)">down</button>
     </li>
 
 </ul>
