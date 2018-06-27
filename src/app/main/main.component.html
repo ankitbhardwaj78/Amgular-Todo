@@ -2,7 +2,9 @@
 
     <li *ngFor="let todo of todolist;let i=index">
         <input *ngIf="todo.done" type="checkbox" checked (click)="todo.done=!todo.done">
-        <input *ngIf="!todo.done" type="checkbox" (click)="todo.done=!todo.done"> {{todo.task}}
+        <span  *ngIf="todo.done" [style.text-decoration]="'line-through'"> {{todo.task}}</span>
+        <input *ngIf="!todo.done" type="checkbox" (click)="todo.done=!todo.done">
+        <span  *ngIf="!todo.done"> {{todo.task}}</span>
         <button *ngIf="i > 0" id="{{i}}" (click)="moveUp(i)">up</button>
         <button *ngIf="i < todolist.length-1" id="{{i}}" (click)="moveDown(i)">down</button>
     </li>
