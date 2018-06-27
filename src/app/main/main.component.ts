@@ -7,11 +7,24 @@ import { Todo } from '../todo';
   styleUrls: ['./main.component.css']
 })
 export class MainComponent implements OnInit {
- 
-  @Input() todolist: Todo;
-    constructor() { }
 
-ngOnInit() {
-}
+  @Input() todolist: Todo;
+  constructor() { }
+
+  ngOnInit() {
+  }
+
+  moveUp(id: number) {
+    let todo = this.todolist[id];
+    this.todolist[id] = this.todolist[id - 1];
+    this.todolist[id - 1] = todo;
+
+  }
+
+  moveDown(id: number) {
+    let todo = this.todolist[id];
+    this.todolist[id] = this.todolist[id + 1];
+    this.todolist[id + 1] = todo;
+  }
 
 }
